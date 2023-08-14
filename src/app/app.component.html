@@ -1,0 +1,123 @@
+<div class="sm:flex sm:justify-center items-center sm:flex-col max-w-full">
+  <div
+    class="align-middle mt-6 p-6 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] sm:shrink-0 sm:grow sm:basis-0 sm:rounded-l-none"
+  >
+    <!-- Page Title -->
+    <div class="sm:flex sm:justify-center">
+      <h2 class="mb-2.5 text-4xl font-medium leading-tight">
+        Contrast Checker
+      </h2>
+    </div>
+
+    <!-- To display color pickers -->
+    <div class="sm:flex sm:flex-row">
+      <!-- To display Foreground Color Picker -->
+      <div class="p-6">
+        <h6 class="text-base font-bold leading-tight pb-2">Foreground Color</h6>
+        <div class="sm:flex sm:flex-col">
+          <div class="flex">
+            <input
+              type="text"
+              class="w-24 rounded-sm border-2 font-medium"
+              [(ngModel)]="foregroundHexaColor"
+              (ngModelChange)="onForegroundHexaColorChange(foregroundHexaColor)"
+            />
+            <input
+              id="nativeColorPicker1"
+              type="color"
+              class="w-[80px] flex-grow ml-2"
+              [(ngModel)]="foregroundColor"
+              (ngModelChange)="onColorChange(foregroundColor)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- To display Background Color Picker -->
+      <div class="p-6">
+        <h6 class="text-base font-bold leading-tight pb-2">Background Color</h6>
+        <div class="flex">
+          <input
+            type="text"
+            class="w-24 rounded-sm border-2 font-medium"
+            [(ngModel)]="backgroundHexaColor"
+            (ngModelChange)="onBackgroundHexaColorChange(backgroundHexaColor)"
+          />
+          <input
+            id="nativeColorPicker2"
+            type="color"
+            class="w-[80px] flex-grow ml-2"
+            [(ngModel)]="backgroundColor"
+            (ngModelChange)="onColorChange(backgroundColor)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- To display Contrast Ratio -->
+    <div class="flex justify-center rounded-lg border-2 p-6">
+      <div class="flex flex-col">
+        <h5 class="mb-2 text-xl font-light leading-tight">Contrast Ratio</h5>
+        <div class="flex justify-center">
+          <h2 class="text-4xl font-medium leading-tight">
+            {{ contrastRatio }}
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="mb-2 text-2xl font-normal leading-tight text-red-700 mt-6">
+      Normal Text
+    </h4>
+    <div class="divide-y divide-gray-400 hover:divide-y-8"></div>
+
+    <hr class="h-0.5 bg-red-600 opacity-100" />
+
+    <!-- To display WCAG AA Results -->
+    <div class="flex flex-col justify-start mt-2">
+      <h6 class="text-base font-light leading-tight pb-2 max-w-screen-lg">
+        WCAG AA:
+        <span class="text-base font-medium leading-tight text-green-700">{{
+          normalText_WCAG_AA
+        }}</span>
+      </h6>
+    </div>
+
+    <!-- To display WCAG AAA Results -->
+    <div class="flex flex-col">
+      <h6 class="text-base font-light leading-tight pb-2 max-w-screen-lg">
+        WCAG AAA:
+        <span class="text-base font-bold leading-tight text-red-700">{{
+          normalText_WCAG_AAA
+        }}</span>
+      </h6>
+    </div>
+
+    <h4 class="mb-2 text-2xl font-normal leading-tight text-red-700 mt-6">
+      Large Text
+    </h4>
+    <div class="divide-y divide-gray-400 hover:divide-y-8"></div>
+
+    <hr class="h-0.5 bg-red-600 opacity-100" />
+
+    <!-- To display WCAG AA Results -->
+    <div class="flex flex-col justify-start mt-2">
+      <h6 class="text-base font-light leading-tight pb-2 max-w-screen-lg">
+        WCAG AA:
+        <span class="text-base font-medium leading-tight text-green-700">{{
+          largeText_WCAG_AA
+        }}</span>
+      </h6>
+    </div>
+
+    <!-- To display WCAG AAA Results -->
+    <div class="flex flex-col">
+      <h6 class="text-base font-light leading-tight pb-2 max-w-screen-lg">
+        WCAG AAA:
+        <span class="text-base font-bold leading-tight text-red-700">{{
+          largeText_WCAG_AAA
+        }}</span>
+      </h6>
+    </div>
+  </div>
+</div>
